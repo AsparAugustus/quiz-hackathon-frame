@@ -15,12 +15,10 @@ export const generateFrameData = (quizNum : number, options_html : any ) => {
         //   }
         // ]
         buttons : options_html
-        
-  
         ,
         image:  `${NEXT_PUBLIC_URL}/park-1.png`,
         // image:  await generateSVG("example"),
-        post_url: `${NEXT_PUBLIC_URL}/api/quiz?currentQuestion=${quizNum}&somethingelse=false`,
+        post_url: `${NEXT_PUBLIC_URL}/api/quiz?currentQuestion=${quizNum}&answer=ahh`,
       })
 }
 

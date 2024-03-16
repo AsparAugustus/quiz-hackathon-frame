@@ -53,15 +53,19 @@ export async function POST(req: NextRequest): Promise<Response> {
     }
 
     let currentQuestion = req.nextUrl.searchParams.get('currentQuestion');
-    let somethingelse = req.nextUrl.searchParams.get('somethingelse');
+    let answer = req.nextUrl.searchParams.get('answer');
 
-    if(!currentQuestion || !somethingelse) throw new Error("Missing search params")
+    if(!currentQuestion || !answer) throw new Error("Missing search params")
 
     let currentQuestion_int = parseInt(currentQuestion)
 
     const nextQuestion = currentQuestion_int + 1
 
     console.log(currentQuestion, nextQuestion, "currentQuestion")
+
+    console.log(status.action.tapped_button, "tapped_button")
+
+    const tapped_button = status.action.tapped_button
  
     
 
