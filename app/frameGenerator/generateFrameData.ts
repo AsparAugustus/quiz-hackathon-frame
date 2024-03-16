@@ -5,6 +5,8 @@ import {generateSVG} from '../utils/generateSVG'
 
 export const generateFrameData = (quizNum : number ) => {
 
+  console.log(quizNum, "quizNum")
+
 
     return getFrameHtmlResponse({
         buttons: [

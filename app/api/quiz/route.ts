@@ -61,7 +61,7 @@ export async function POST(req: NextRequest): Promise<Response> {
 
     const nextQuestion = currentQuestion_int + 1
 
-    // console.log(currentQuestion, somethingelse, "combined")
+    console.log(currentQuestion, nextQuestion, "currentQuestion")
  
     
 
