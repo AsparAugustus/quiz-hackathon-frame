@@ -10,6 +10,9 @@ import { Address, createPublicClient, http } from 'viem';
 import { sepolia } from 'viem/chains';
 
 import { quiz } from '../../quiz/sampleQuiz'
+import { generateFrameData } from '../../frameGenerator/generateFrameData'
+
+import {getTotalQuestions, getOptionsForQuestion} from '../../utils/parseQuiz'
 
 const NEYNAR_API_KEY = process.env.NEYNAR_API_KEY;
 
@@ -37,6 +40,7 @@ let user = {
   }
 
 export async function POST(req: NextRequest): Promise<Response> {
+    
 
     const body: { trustedData?: { messageBytes?: string } } = await req.json();
   
@@ -48,14 +52,17 @@ export async function POST(req: NextRequest): Promise<Response> {
       throw new Error('Invalid frame request');
     }
 
-    const firstPage = req.nextUrl.searchParams.get('firstPage');
-    const somethingelse = req.nextUrl.searchParams.get('somethingelse');
+    let currentQuestion = req.nextUrl.searchParams.get('currentQuestion');
+    let somethingelse = req.nextUrl.searchParams.get('somethingelse');
 
-    console.log(firstPage, somethingelse, "combined")
-    // const {firstPage, somethingelse} = req.nextUrl.searchParams
+    if(!currentQuestion || !somethingelse) return
 
-    // console.log(req.nextUrl, "req.nextUrl")
-    // console.log(req.nextUrl.searchParams, "req.nextUrl.searchParams")
+    let currentQuestion_int = parseInt(currentQuestion)
+
+    const nextQuestion = currentQuestion_int + 1
+
+    console.log(currentQuestion, somethingelse, "combined")
+ 
     
 
 
@@ -85,17 +92,22 @@ export async function POST(req: NextRequest): Promise<Response> {
     const encodedCustodyAddress = user.custody_address !== null ? encodeURIComponent(user.custody_address) : "";
     const encodedUsername = user.username !== null ? encodeURIComponent(user.username) : "";
     const encodedPfpUrl = user.pfp_url !== null ? encodeURIComponent(user.pfp_url) : "";
+
+
+
+
+
+
+
+
+    const total_questions = getTotalQuestions(quiz)
+    const question_options = getOptionsForQuestion(quiz, currentQuestion)
+
+    
   
     return new NextResponse(
-      getFrameHtmlResponse({
-        buttons: [
-          {
-            label: `Start conversion!`,
-          }
-        ],
-        image:  `${NEXT_PUBLIC_URL}/park-1.png`,
-        post_url: `${NEXT_PUBLIC_URL}/api/quiz`,
-      }),
+      ///getFrameHtml here
+      generateFrameData(currentQuestion_int)
     );
   
   }

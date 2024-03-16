@@ -2,6 +2,14 @@ import { getFrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
 import { NEXT_PUBLIC_URL } from './config';
 
+import fs from 'fs';
+import path from 'path';
+
+import { GetServerSideProps } from 'next';
+
+import { quiz } from './quiz/sampleQuiz'
+
+
 
 
 const frameMetadata = getFrameMetadata({
@@ -11,7 +19,7 @@ const frameMetadata = getFrameMetadata({
     }
   ],
   image: `${NEXT_PUBLIC_URL}/park-1.png`,
-  post_url: `${NEXT_PUBLIC_URL}/api/quiz?firstPage=true&somethingelse=false`,
+  post_url: `${NEXT_PUBLIC_URL}/api/quiz?currentQuestion=0&somethingelse=false`,
 });
 
 export const metadata: Metadata = {
@@ -34,3 +42,5 @@ export default function Page() {
     </>
   );
 }
+
+
