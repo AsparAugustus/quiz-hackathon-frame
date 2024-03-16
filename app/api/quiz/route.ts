@@ -117,7 +117,7 @@ export async function POST(req: NextRequest): Promise<Response> {
   
     return new NextResponse(
       ///getFrameHtml here
-      await generateFrameData(currentQuestion_int, question_string, options_html, tapped_button)
+      await generateFrameData(nextQuestion, question_string, options_html, tapped_button)
     );
   
   }
