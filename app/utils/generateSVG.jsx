@@ -44,7 +44,7 @@ export async function generateSVG(question, options) {
       );
 
       
-  const svg = new ImageResponse(component, {
+  const svg = new ImageResponse((component, {
     width: 1200,
     height: 630,
     // fonts: [
@@ -54,7 +54,7 @@ export async function generateSVG(question, options) {
     //     style: 'normal',
     //   },
     // ],
-  });
+  }));
 
   console.log(svg, "svg")
   return svg;
