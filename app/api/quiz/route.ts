@@ -9,6 +9,8 @@ import { createPimlicoPaymasterClient } from 'permissionless/clients/pimlico';
 import { Address, createPublicClient, http } from 'viem';
 import { sepolia } from 'viem/chains';
 
+import { quiz } from '../../quiz/sampleQuiz'
+
 const NEYNAR_API_KEY = process.env.NEYNAR_API_KEY;
 
 
