@@ -39,12 +39,12 @@ export async function POST(req: NextRequest): Promise<Response> {
     const body: { trustedData?: { messageBytes?: string } } = await req.json();
   
     // Check if frame request is valid
-    const status = await validateFrameRequest(body.trustedData?.messageBytes);
+    // const status = await validateFrameRequest(body.trustedData?.messageBytes);
   
-    if (!status?.valid) {
-      console.error(status);
-      throw new Error('Invalid frame request');
-    }
+    // if (!status?.valid) {
+    //   console.error(status);
+    //   throw new Error('Invalid frame request');
+    // }
 
     const url = new URL(req.url);
     const searchParams = url.searchParams;
@@ -61,12 +61,12 @@ export async function POST(req: NextRequest): Promise<Response> {
     //3. display_name
     //4. pfp url
   
-    user.custody_address = status.action.interactor.custody_address
-    user.username = status.action.interactor.username
-    user.display_name = status.action.interactor.display_name
-    user.pfp_url = status.action.interactor.pfp_url
+    // user.custody_address = status.action.interactor.custody_address
+    // user.username = status.action.interactor.username
+    // user.display_name = status.action.interactor.display_name
+    // user.pfp_url = status.action.interactor.pfp_url
   
-    console.log(user.username)
+    // console.log(user.username)
   
     //follower count? following count?
   
@@ -74,9 +74,9 @@ export async function POST(req: NextRequest): Promise<Response> {
   
     // return getResponse(ResponseType.SUCCESS);
   
-    const encodedCustodyAddress = user.custody_address !== null ? encodeURIComponent(user.custody_address) : "";
-    const encodedUsername = user.username !== null ? encodeURIComponent(user.username) : "";
-    const encodedPfpUrl = user.pfp_url !== null ? encodeURIComponent(user.pfp_url) : "";
+    // const encodedCustodyAddress = user.custody_address !== null ? encodeURIComponent(user.custody_address) : "";
+    // const encodedUsername = user.username !== null ? encodeURIComponent(user.username) : "";
+    // const encodedPfpUrl = user.pfp_url !== null ? encodeURIComponent(user.pfp_url) : "";
   
     return new NextResponse(
       getFrameHtmlResponse({
