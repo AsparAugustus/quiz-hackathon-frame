@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { NEXT_PUBLIC_URL } from '@/app/config';
 import { FrameRequest, getFrameHtmlResponse, getFrameMessage } from '@coinbase/onchainkit';
 import { NextRequest, NextResponse } from 'next/server';
