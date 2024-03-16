@@ -55,7 +55,7 @@ export async function POST(req: NextRequest): Promise<Response> {
     let currentQuestion = req.nextUrl.searchParams.get('currentQuestion');
     let somethingelse = req.nextUrl.searchParams.get('somethingelse');
 
-    if(!currentQuestion || !somethingelse) return
+    if(!currentQuestion || !somethingelse) throw new Error("Missing search params")
 
     let currentQuestion_int = parseInt(currentQuestion)
 
