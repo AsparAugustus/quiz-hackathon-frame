@@ -85,10 +85,8 @@ export async function POST(req: NextRequest): Promise<Response> {
             label: `Start conversion!`,
           }
         ],
-        image: {
-          src: `${NEXT_PUBLIC_URL}/park-1.png`,
-        },
-        postUrl: `${NEXT_PUBLIC_URL}/api/quiz`,
+        image:  `${NEXT_PUBLIC_URL}/park-1.png`,
+        post_url: `${NEXT_PUBLIC_URL}/api/quiz`,
       }),
     );
   
