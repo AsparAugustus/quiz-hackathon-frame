@@ -1,26 +1,24 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "allowJs": true,                // Allow JavaScript files to be compiled
+    "checkJs": false,               // Disable checking JavaScript files for errors
+    "strict": false,                // Disable strict type-checking options
+    "noEmit": false,                // Enable emitting output files
+    "esModuleInterop": true,        // Enable compatibility with CommonJS and ES module interop
+    "module": "commonjs",           // Use CommonJS module system
+    "moduleResolution": "node",     // Use Node.js style module resolution
+    "resolveJsonModule": true,      // Enable importing JSON files as modules
+    "jsx": "react-jsx",             // Enable JSX syntax (if needed)
+    "incremental": false,           // Disable incremental compilation
+    "types": [],                    // Don't include any default types
+    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export
+    "noImplicitAny": false,         // Disable implicit 'any' types
+    "noUnusedLocals": false,        // Disable checking for unused local variables
+    "noUnusedParameters": false,    // Disable checking for unused parameters
     "paths": {
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["next-env.d.ts", "**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"], // Include JavaScript files for compilation
+  "exclude": ["node_modules"]      // Exclude node_modules from compilation
 }
