@@ -55,5 +55,7 @@ export async function generateSVG(question, options) {
     //   },
     // ],
   });
+
+  console.log(svg, "svg")
   return svg;
 }
