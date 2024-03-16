@@ -12,7 +12,7 @@ import { sepolia } from 'viem/chains';
 import { quiz } from '../../quiz/sampleQuiz'
 import { generateFrameData } from '../../frameGenerator/generateFrameData'
 
-import {getTotalQuestions, getOptionsForQuestion} from '../../utils/parseQuiz'
+import {getTotalQuestions, getOptionsForQuestion, convertOptionstoHTML} from '../../utils/parseQuiz'
 
 const NEYNAR_API_KEY = process.env.NEYNAR_API_KEY;
 
@@ -102,6 +102,7 @@ export async function POST(req: NextRequest): Promise<Response> {
 
     const total_questions = getTotalQuestions(quiz)
     const question_options = getOptionsForQuestion(quiz, currentQuestion)
+    const options_html = convertOptionstoHTML(question_options, currentQuestion_int)
 
     console.log(total_questions, question_options)
 
@@ -109,7 +110,7 @@ export async function POST(req: NextRequest): Promise<Response> {
   
     return new NextResponse(
       ///getFrameHtml here
-      generateFrameData(currentQuestion_int)
+      generateFrameData(currentQuestion_int, options_html)
     );
   
   }

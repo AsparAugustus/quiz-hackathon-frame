@@ -1,3 +1,5 @@
+import { NEXT_PUBLIC_URL } from '../config';
+
 // Function to get the total number of questions
 export function getTotalQuestions(quizData : any) {
     return quizData.quizzes.length;
@@ -10,3 +12,11 @@ export function getOptionsForQuestion(quizData : any, questionIndex : any) {
     }
     return quizData.quizzes[questionIndex].options;
   }
+
+export function convertOptionstoHTML(options : any, quizNum : any) {
+    return options.map((option : any, index : any) => ({
+        label: option.answer,
+        action: 'post_url',
+        target: `${NEXT_PUBLIC_URL}/api/quiz?currentQuestion=${quizNum}&somethingelse=false`,
+      }));
+}
