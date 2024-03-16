@@ -61,7 +61,7 @@ export async function POST(req: NextRequest): Promise<Response> {
 
     const nextQuestion = currentQuestion_int + 1
 
-    console.log(currentQuestion, somethingelse, "combined")
+    // console.log(currentQuestion, somethingelse, "combined")
  
     
 
@@ -102,6 +102,8 @@ export async function POST(req: NextRequest): Promise<Response> {
 
     const total_questions = getTotalQuestions(quiz)
     const question_options = getOptionsForQuestion(quiz, currentQuestion)
+
+    console.log(total_questions, question_options)
 
     
   

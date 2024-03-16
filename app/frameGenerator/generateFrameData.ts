@@ -16,8 +16,6 @@ export const generateFrameData = (quizNum : number ) => {
         // image:  await generateSVG("example"),
         post_url: `${NEXT_PUBLIC_URL}/api/quiz?currentQuestion=${quizNum}&somethingelse=false`,
       })
-
-
-
-
 }
+
+
