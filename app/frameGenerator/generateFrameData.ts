@@ -3,7 +3,7 @@ import { NEXT_PUBLIC_URL } from '../config';
 
 import {generateSVG} from '../utils/generateSVG'
 
-export const generateFrameData = async (quizNum : number, options_html : any, tapped_button: any ) => {
+export const generateFrameData =  (quizNum : number, question_string : string, options_html : any, tapped_button: any ) => {
 
   console.log(quizNum, "quizNum")
 
@@ -17,7 +17,7 @@ export const generateFrameData = async (quizNum : number, options_html : any, ta
         buttons : options_html
         ,
         // image:  `${NEXT_PUBLIC_URL}/park-1.png`,
-        image:  await generateSVG("example").toString(),
+        image: generateSVG(question_string).toString(),
         post_url: `${NEXT_PUBLIC_URL}/api/quiz?currentQuestion=${quizNum}`,
       })
 }

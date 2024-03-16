@@ -21,3 +21,7 @@ export function convertOptionstoHTML(options : any, quizNum : any) {
         // target: `${NEXT_PUBLIC_URL}/api/quiz?currentQuestion=${quizNum}&somethingelse=false`,
       }));
 }
+
+export function getQuestion(quizData : any, quizNum : any) {
+    return quizData.quizzes[quizNum]
+}
