@@ -2,10 +2,9 @@ import { ImageResponse } from 'next/og'
 
 
 export async function generateSVG(question : string, options = {}) {
-  const imageData = await fetch(
-    new URL('./park-2.png', import.meta.url)
-  ).then((res) => res.arrayBuffer())
   
+  const imageData = await fetch('/assets/park-2.png').then((res) => res.arrayBuffer());
+
 
   
     const component: JSX.Element = (
