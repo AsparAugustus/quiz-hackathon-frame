@@ -46,7 +46,7 @@ export async function POST(req: NextRequest): Promise<Response> {
       throw new Error('Invalid frame request');
     }
 
-    console.log(req.nextUrl, "nextUrl")
+    console.log(req, "req")
 
     
 
