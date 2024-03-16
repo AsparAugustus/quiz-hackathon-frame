@@ -47,10 +47,13 @@ export async function POST(req: NextRequest): Promise<Response> {
     }
 
     const url = new URL(req.url);
-    const searchParams = url.searchParams;
+    // const searchParams = url.searchParams;
+    const searchParams = req.nextUrl.searchParams;
   
     // Example: Get a specific query parameter
     const myQueryParam = searchParams.get('firstPage');
+
+    
 
 
     console.log(myQueryParam, "myQueryParam")
