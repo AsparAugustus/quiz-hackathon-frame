@@ -1,9 +1,9 @@
 import { ImageResponse } from 'next/og'
-
+import {NEXT_PUBLIC_URL} from '../config'
 
 export async function generateSVG(question, options) {
   
-  const imageData = await fetch('/assets/park-2.png').then((res) => res.arrayBuffer());
+  const imageData = await fetch(`${NEXT_PUBLIC_URL}/park-2.png`).then((res) => res.arrayBuffer());
 
 
   
