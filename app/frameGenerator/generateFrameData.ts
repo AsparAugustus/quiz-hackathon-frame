@@ -17,7 +17,7 @@ export const generateFrameData =  (quizNum : number, question_string : string, o
         buttons : options_html
         ,
         // image:  `${NEXT_PUBLIC_URL}/park-1.png`,
-        image: generateSVG(question_string).toString(),
+        image: generateSVG(question_string) as string,
         post_url: `${NEXT_PUBLIC_URL}/api/quiz?currentQuestion=${quizNum}`,
       })
 }
