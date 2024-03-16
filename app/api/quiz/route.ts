@@ -46,17 +46,11 @@ export async function POST(req: NextRequest): Promise<Response> {
       throw new Error('Invalid frame request');
     }
 
-    const url = new URL(req.url);
-    // const searchParams = url.searchParams;
-    const searchParams = req.nextUrl.searchParams;
-  
-    // Example: Get a specific query parameter
-    const myQueryParam = searchParams.get('firstPage');
+    console.log(req.nextUrl, "nextUrl")
 
     
 
 
-    console.log(myQueryParam, "myQueryParam")
   
     //need to fetch user's
     //1. custody address? verified addresses?
