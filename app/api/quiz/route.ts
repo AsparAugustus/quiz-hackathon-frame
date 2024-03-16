@@ -48,9 +48,12 @@ export async function POST(req: NextRequest): Promise<Response> {
       throw new Error('Invalid frame request');
     }
 
-    const {firstPage, somethingelse} = req.nextUrl.searchParams
+    // const {firstPage, somethingelse} = req.nextUrl.searchParams
 
-    console.log(firstPage, somethingelse, "somethingelse")
+    console.log(req.nextUrl, "req.nextUrl")
+    console.log(req.nextUrl.searchParams, "req.nextUrl.searchParams")
+    
+
 
     
 
