@@ -1,10 +1,10 @@
 // Function to get the total number of questions
-export function getTotalQuestions(quizData) {
+export function getTotalQuestions(quizData : any) {
     return quizData.quizzes.length;
   }
   
   // Function to get the options for a specific question
-export function getOptionsForQuestion(quizData, questionIndex) {
+export function getOptionsForQuestion(quizData : any, questionIndex : any) {
     if (questionIndex < 0 || questionIndex >= quizData.quizzes.length) {
       return []; // Return empty array if question index is out of range
     }
