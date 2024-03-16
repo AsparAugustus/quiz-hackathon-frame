@@ -9,6 +9,8 @@ import { createPimlicoPaymasterClient } from 'permissionless/clients/pimlico';
 import { Address, createPublicClient, http } from 'viem';
 import { sepolia } from 'viem/chains';
 
+import {validateAnswer} from '../../utils/validateAnswer'
+
 import { quiz } from '../../quiz/sampleQuiz'
 import { generateFrameData } from '../../frameGenerator/generateFrameData'
 
@@ -110,6 +112,10 @@ export async function POST(req: NextRequest): Promise<Response> {
     const question_options = getOptionsForQuestion(quiz, currentQuestion_int)
     const options_html = convertOptionstoHTML(question_options, currentQuestion_int)
     const question_string = getQuestion(quiz, currentQuestion_int)
+
+    const answer_valid = validateAnswer(quiz, currentQuestion_int, tapped_button)
+
+    console.log(answer_valid, tapped_button, question_string)
 
     console.log(total_questions, question_options)
 
