@@ -1,4 +1,4 @@
-import satori from 'satori'
+import { ImageResponse } from 'next/og'
 
 export async function generateSVG(question : string, options = {}) {
     const component: JSX.Element = (
@@ -10,6 +10,16 @@ export async function generateSVG(question : string, options = {}) {
       );
 
       
-  const svg = await satori(component, options);
+  const svg = await new ImageResponse(component, {
+    width: 1200,
+    height: 630,
+    // fonts: [
+    //   {
+    //     name: 'Oswald Bold',
+    //     data: fontData,
+    //     style: 'normal',
+    //   },
+    // ],
+  });
   return svg;
 }
