@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
 
-export async function generateSVG(question : string, options = {}) {
+export function generateSVG(question : string, options = {}) {
     const component: JSX.Element = (
         
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -10,7 +10,7 @@ export async function generateSVG(question : string, options = {}) {
       );
 
       
-  const svg = await new ImageResponse(component, {
+  const svg = new ImageResponse(component, {
     width: 1200,
     height: 630,
     // fonts: [
