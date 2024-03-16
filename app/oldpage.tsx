@@ -5,15 +5,15 @@ import { NEXT_PUBLIC_URL } from './config';
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: 'Start Quiz'
+      label: 'Create Smart Account'
     }
   ],
-  image: `${NEXT_PUBLIC_URL}/park-1.png`,
-  post_url: `${NEXT_PUBLIC_URL}/api/quiz?firstPage=true`,
+  image: `${NEXT_PUBLIC_URL}/main.png`,
+  post_url: `${NEXT_PUBLIC_URL}/api/account`,
 });
 
 export const metadata: Metadata = {
-  title: 'Quiz',
+  title: 'Smart Account Frame Template',
   description: 'LFG',
   openGraph: {
     title: 'Smart Account Frame Templatess',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <h1>Quiz</h1>
+      <h1>Smart Account Frame Template</h1>
     </>
   );
 }
