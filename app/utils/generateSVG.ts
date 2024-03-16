@@ -1,9 +1,9 @@
 import satori from 'satori'
 
-export async function generateSVG(text, options = {}) {
+export async function generateSVG(question : string, options = {}) {
   const component = (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <h1 style={{ fontSize: '48px', margin: 0 }}>{text}</h1>
+      <h1 style={{ fontSize: '48px', margin: 0 }}>{question}</h1>
     </div>
   );
 
