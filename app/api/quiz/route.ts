@@ -115,16 +115,21 @@ export async function POST(req: NextRequest): Promise<Response> {
 
     // console.log(message)
 
+    // <meta name="fc:frame:button:1" content="🌲 ${user.custody_address} 🌲">
     
 
     if(currentQuestion_int === total_questions) {
+        console.log("hit end of quiz", currentQuestion_int, total_questions)
         return new NextResponse(`
         <html>
         <head>
             <meta proerty="fc:frame" content="vnext" />
             <meta name="fc:frame:image" content="https://build-onchain-apps.vercel.app/release/v-0-17.png">
             <meta name="fc:frame:post_url" content="post_url_test">
-            <meta name="fc:frame:button:1" content="🌲 ${user.custody_address} 🌲">
+           
+            <body>
+            <p>BOAT Text</p>
+            </body>
         </head>
         </html>
         `
