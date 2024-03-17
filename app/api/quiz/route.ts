@@ -113,9 +113,9 @@ export async function POST(req: NextRequest): Promise<Response> {
     const options_html = convertOptionstoHTML(question_options, currentQuestion_int)
     const question_string = getQuestion(quiz, currentQuestion_int)
 
-    const answer_valid = validateAnswer(quiz, currentQuestion_int, tapped_button)
+    // const answer_valid = validateAnswer(quiz, currentQuestion_int, tapped_button)
 
-    console.log(answer_valid, tapped_button, question_string)
+    // console.log(answer_valid, tapped_button, question_string)
 
     console.log(total_questions, question_options)
 
