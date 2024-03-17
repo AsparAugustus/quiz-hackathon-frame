@@ -123,7 +123,7 @@ export async function POST(req: NextRequest): Promise<Response> {
         return new NextResponse(`
         <html>
         <head>
-            <meta proerty="fc:frame" content="vnext" />
+            <meta property="fc:frame" content="vnext" />
             <meta name="fc:frame:image" content="https://play-lh.googleusercontent.com/6_DvJALXHtNqRLwZyJt96H7hcT5InqyAHx0EChmpRZTZSihGWjkd2MihItY5y2Vjrz3w=w240-h480-rw">
             <body>
             <p>BOAT Text</p>
