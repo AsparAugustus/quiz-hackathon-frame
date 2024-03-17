@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Madimi+One&family=Peralta&display=swap');
+
+
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'animate.css';
+
+.hero-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    animation-duration: 2s;
+    animation-name: fadeInUp;
+  }
+
+.hero-text-large {
+    font-family: "Madimi One", sans-serif;
+
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.green-text {
+  color: #66A836;
+}
+
+.hero-text-small{
+     font-family: "Madimi One", sans-serif;
+
+  font-size: 1rem;
+  font-weight: 100;
+  color: hsl(0, 0%, 0%);
+  text-align: center;
+  margin-top: 0.5rem;
+
+
+}
+
+
+.hero-icon {
+    animation: rotating 3.0s linear infinite;
+
+  }
+
+  
+  @keyframes rotating {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }

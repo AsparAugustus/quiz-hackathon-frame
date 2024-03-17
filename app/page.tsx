@@ -8,6 +8,10 @@ import path from 'path';
 import { GetServerSideProps } from 'next';
 
 import { quiz } from './quiz/sampleQuiz'
+import Hero from './components/Hero';
+import Header from './components/Header';
+import Kartonomics from './components/Kartonomics';
+import KartikNFT from './components/KartikNFT';
 
 
 
@@ -37,9 +41,12 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <>
-      <h1>Quiz</h1>
-    </>
+    <div className="bg-[#FFD66D]">
+      <Header/>
+      <Hero />
+      <KartikNFT/>
+      <Kartonomics/>
+    </div>
   );
 }
 
