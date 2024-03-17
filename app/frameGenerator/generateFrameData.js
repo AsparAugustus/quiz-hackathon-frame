@@ -8,7 +8,7 @@ export const generateFrameData =  async (quizNum) => {
   console.log(quizNum, "quizNum")
 
 
-    return new getFrameHtmlResponse({
+    return getFrameHtmlResponse({
         buttons: [
           {
             label: `generateFrameData!`,

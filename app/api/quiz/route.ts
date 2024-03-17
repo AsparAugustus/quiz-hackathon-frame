@@ -21,7 +21,6 @@ const NEYNAR_API_KEY = process.env.NEYNAR_API_KEY;
 
 
 
-
 let user = {
     custody_address: null,
     username: null,
@@ -33,30 +32,30 @@ let user = {
 export async function POST(req: NextRequest): Promise<Response> {
     
 
-    // const body: { trustedData?: { messageBytes?: string } } = await req.json();
+    const body: { trustedData?: { messageBytes?: string } } = await req.json();
   
-    // // Check if frame request is valid
-    // const status = await validateFrameRequest(body.trustedData?.messageBytes);
+    // Check if frame request is valid
+    const status = await validateFrameRequest(body.trustedData?.messageBytes);
   
-    // if (!status?.valid) {
-    //   console.error(status);
-    //   throw new Error('Invalid frame request');
-    // }
+    if (!status?.valid) {
+      console.error(status);
+      throw new Error('Invalid frame request');
+    }
 
-    // let currentQuestion = req.nextUrl.searchParams.get('currentQuestion');
+    let currentQuestion = req.nextUrl.searchParams.get('currentQuestion');
    
 
-    // if(!currentQuestion) throw new Error("Missing search params")
+    if(!currentQuestion) throw new Error("Missing search params")
 
-    // let currentQuestion_int = parseInt(currentQuestion)
+    let currentQuestion_int = parseInt(currentQuestion)
 
-    // const nextQuestion = currentQuestion_int + 1
+    const nextQuestion = currentQuestion_int + 1
 
-    // console.log(currentQuestion, nextQuestion, "currentQuestion")
+    console.log(currentQuestion, nextQuestion, "currentQuestion")
 
-    // console.log(status.action.tapped_button, "tapped_button")
+    console.log(status.action.tapped_button, "tapped_button")
 
-    // const tapped_button = status.action.tapped_button.index
+    const tapped_button = status.action.tapped_button.index
  
     
 
@@ -65,28 +64,28 @@ export async function POST(req: NextRequest): Promise<Response> {
 
 
   
-    // //need to fetch user's
-    // //1. custody address? verified addresses?
-    // //2. username
-    // //3. display_name
-    // //4. pfp url
+    //need to fetch user's
+    //1. custody address? verified addresses?
+    //2. username
+    //3. display_name
+    //4. pfp url
   
-    // user.custody_address = status.action.interactor.custody_address
-    // user.username = status.action.interactor.username
-    // user.display_name = status.action.interactor.display_name
-    // user.pfp_url = status.action.interactor.pfp_url
+    user.custody_address = status.action.interactor.custody_address
+    user.username = status.action.interactor.username
+    user.display_name = status.action.interactor.display_name
+    user.pfp_url = status.action.interactor.pfp_url
   
-    // console.log(user.username)
+    console.log(user.username)
   
-    // //follower count? following count?
+    //follower count? following count?
   
   
   
-    // // return getResponse(ResponseType.SUCCESS);
+    // return getResponse(ResponseType.SUCCESS);
   
-    // const encodedCustodyAddress = user.custody_address !== null ? encodeURIComponent(user.custody_address) : "";
-    // const encodedUsername = user.username !== null ? encodeURIComponent(user.username) : "";
-    // const encodedPfpUrl = user.pfp_url !== null ? encodeURIComponent(user.pfp_url) : "";
+    const encodedCustodyAddress = user.custody_address !== null ? encodeURIComponent(user.custody_address) : "";
+    const encodedUsername = user.username !== null ? encodeURIComponent(user.username) : "";
+    const encodedPfpUrl = user.pfp_url !== null ? encodeURIComponent(user.pfp_url) : "";
 
 
 
@@ -95,24 +94,24 @@ export async function POST(req: NextRequest): Promise<Response> {
 
 
 
-    // const total_questions = getTotalQuestions(quiz)
-    // const question_options = getOptionsForQuestion(quiz, currentQuestion_int)
-    // const options_html = convertOptionstoHTML(question_options, currentQuestion_int)
-    // const question_string = getQuestion(quiz, currentQuestion_int)
+    const total_questions = getTotalQuestions(quiz)
+    const question_options = getOptionsForQuestion(quiz, currentQuestion_int)
+    const options_html = convertOptionstoHTML(question_options, currentQuestion_int)
+    const question_string = getQuestion(quiz, currentQuestion_int)
 
-    // // const answer_valid = validateAnswer(quiz, currentQuestion_int, tapped_button)
+    // const answer_valid = validateAnswer(quiz, currentQuestion_int, tapped_button)
 
-    // // console.log(answer_valid, tapped_button, question_string)
+    // console.log(answer_valid, tapped_button, question_string)
 
 
 
-    // // console.log(total_questions, question_options)
+    // console.log(total_questions, question_options)
 
     
   
     return new NextResponse(
       ///getFrameHtml here
-      await generateFrameData(1)
+      await generateFrameData(nextQuestion, question_string, options_html)
     );
   
   }
