@@ -101,11 +101,36 @@ export async function POST(req: NextRequest): Promise<Response> {
 
     const answer_valid = validateAnswer(quiz, currentQuestion_int, tapped_button)
 
-    console.log(answer_valid, tapped_button, question_string)
+    console.log(answer_valid, tapped_button, question_string, "validateAnswer")
 
 
 
     // console.log(total_questions, question_options)
+
+
+    let signer: string | undefined = '';
+
+    // // @ts-ignore
+    // const { isValid, message } = await getFrameMessage(body, { neynarApiKey: NEYNAR_API_KEY });
+
+    // console.log(message)
+
+    
+
+    if(currentQuestion_int === total_questions) {
+        return new NextResponse(`
+        <html>
+        <head>
+            <meta proerty="fc:frame" content="vnext" />
+            <meta name="fc:frame:image" content="https://build-onchain-apps.vercel.app/release/v-0-17.png">
+            <meta name="fc:frame:post_url" content="post_url_test">
+            <meta name="fc:frame:button:1" content="🌲 ${user.custody_address} 🌲">
+        </head>
+        </html>
+        `
+             
+        )
+    }
 
     
   
