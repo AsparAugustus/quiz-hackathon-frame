@@ -124,9 +124,7 @@ export async function POST(req: NextRequest): Promise<Response> {
         <html>
         <head>
             <meta proerty="fc:frame" content="vnext" />
-            <meta name="fc:frame:image" content="https://build-onchain-apps.vercel.app/release/v-0-17.png">
-            <meta name="fc:frame:post_url" content="post_url_test">
-           
+            <meta name="fc:frame:image" content="https://play-lh.googleusercontent.com/6_DvJALXHtNqRLwZyJt96H7hcT5InqyAHx0EChmpRZTZSihGWjkd2MihItY5y2Vjrz3w=w240-h480-rw">
             <body>
             <p>BOAT Text</p>
             </body>
