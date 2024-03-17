@@ -15,8 +15,8 @@ export function getOptionsForQuestion(quizData : any, questionIndex : any) {
 
 export function convertOptionstoHTML(options : any, quizNum : any) {
     return options.map((option : any, index : any) => ({
-        label: option.answer,
-        value: option.answer
+        label: option.answer
+        // value: option.answer
         // action: 'post_url',
         // target: `${NEXT_PUBLIC_URL}/api/quiz?currentQuestion=${quizNum}&somethingelse=false`,
       }));
