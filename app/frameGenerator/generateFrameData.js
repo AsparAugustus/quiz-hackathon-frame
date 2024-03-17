@@ -9,12 +9,12 @@ export const generateFrameData =  async (quizNum, question_string, options_html)
 
 
     return new getFrameHtmlResponse({
-        // buttons: [
-        //   {
-        //     label: `generateFrameData!`,
-        //   }
-        // ]
-        buttons : options_html,
+        buttons: [
+          {
+            label: `generateFrameData!`,
+          }
+        ]
+        // buttons : options_html,
         image:  `${NEXT_PUBLIC_URL}/park-1.png`,
         // image: await generateSVG(question_string),
         post_url: `${NEXT_PUBLIC_URL}/api/quiz?currentQuestion=${quizNum}`,
