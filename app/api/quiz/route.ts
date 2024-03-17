@@ -116,13 +116,15 @@ export async function POST(req: NextRequest): Promise<Response> {
 
     // console.log(answer_valid, tapped_button, question_string)
 
-    console.log(total_questions, question_options)
+    
+
+    // console.log(total_questions, question_options)
 
     
   
     return new NextResponse(
       ///getFrameHtml here
-      await generateFrameData(nextQuestion, question_string, options_html, tapped_button)
+      await generateFrameData(nextQuestion, question_string, options_html)
     );
   
   }

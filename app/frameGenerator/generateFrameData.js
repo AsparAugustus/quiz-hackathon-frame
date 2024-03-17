@@ -3,7 +3,7 @@ import { NEXT_PUBLIC_URL } from '../config';
 
 import {generateSVG} from '../utils/generateSVG'
 
-export const generateFrameData =  async (quizNum, question_string, options_html, tapped_button) => {
+export const generateFrameData =  async (quizNum, question_string, options_html) => {
 
   console.log(quizNum, "quizNum")
 

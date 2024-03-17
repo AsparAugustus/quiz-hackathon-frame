@@ -5,10 +5,6 @@ import { NEXT_PUBLIC_URL } from './config';
 import fs from 'fs';
 import path from 'path';
 
-import { GetServerSideProps } from 'next';
-
-import { quiz } from './quiz/sampleQuiz'
-
 
 
 
