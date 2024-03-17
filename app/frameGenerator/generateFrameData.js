@@ -13,7 +13,7 @@ export const generateFrameData =  async (quizNum, question_string, options_html)
           {
             label: `generateFrameData!`,
           }
-        ]
+        ],
         // buttons : options_html,
         image:  `${NEXT_PUBLIC_URL}/park-1.png`,
         // image: await generateSVG(question_string),
