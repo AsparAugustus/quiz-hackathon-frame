@@ -118,7 +118,7 @@ export async function POST(req: NextRequest): Promise<Response> {
     // <meta name="fc:frame:button:1" content="🌲 ${user.custody_address} 🌲">
     
 
-    if(currentQuestion_int === total_questions) {
+    if(nextQuestion === total_questions) {
         console.log("hit end of quiz", currentQuestion_int, total_questions)
         return new NextResponse(`
         <html>
