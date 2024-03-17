@@ -18,7 +18,6 @@ import {getQuestion, getTotalQuestions, getOptionsForQuestion, convertOptionstoH
 
 const NEYNAR_API_KEY = process.env.NEYNAR_API_KEY;
 
-export const runtime = 'edge'
 
 
 // const privateKey = process.env.PRIVATE_KEY!;
