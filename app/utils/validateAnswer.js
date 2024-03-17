@@ -1,7 +1,7 @@
 
 
 
-export const validateAnswer = (quizData : any, quizNum: number, tapped_button: number): boolean => {
+export const validateAnswer = (quizData, quizNum, tapped_button) => {
     // Assuming quizData is the object containing your quiz questions and options
 
     const quiz = quizData.quizzes[quizNum]; // Get the current quiz based on quizNum

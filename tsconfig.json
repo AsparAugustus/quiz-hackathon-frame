@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/utils/generateSVG.jsx", "app/frameGenerator/generateFrameData.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/utils/generateSVG.jsx", "app/frameGenerator/generateFrameData.js", "app/utils/validateAnswer.js"],
   "exclude": ["node_modules"]
 }
